@@ -1,4 +1,4 @@
-package Bootcamp_DIO_Santander.aula1;
+package aula1;
 import java.util.Scanner;
 
 public class operadoresLogicos {
