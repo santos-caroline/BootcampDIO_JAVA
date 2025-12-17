@@ -25,6 +25,7 @@ public class aula2Exercicio4 {
             int numN = sc.nextInt();
 
             if (numN < numInicial) {
+                System.out.printf("O número precisa ser MAIOR ou IGUAL a %s. Tente novamente.%n", numInicial);
                 continue;
             }
 
