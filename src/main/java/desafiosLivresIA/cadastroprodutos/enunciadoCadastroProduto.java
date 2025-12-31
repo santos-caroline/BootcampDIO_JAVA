@@ -1,58 +1,110 @@
 /*
-🧩 Desafio Java POO – Cadastro de Produto
+🧩 Desafio Java POO – Produto com Record (Nível Intermediário)
 🎯 Objetivo
-    Criar uma classe que represente um Produto, aplicando os conceitos básicos de Programação Orientada a Objetos (POO).
 
-📋 Requisitos do Desafio
-1️⃣ Classe Produto
-    Crie uma classe chamada Produto com os seguintes atributos privados:
-    nome (String)
-    preco (double)
-    quantidade (int)
+Aplicar:
+    encapsulamento real
+    regras de negócio
+    record como DTO
 
-👉 Todos devem ser private para garantir encapsulamento.
+validações no construtor:
+    separação entre domínio e representação de dados
 
-2️⃣ Construtor
-    Crie um construtor público que receba:
-    nome
-    preco
-    A quantidade deve iniciar com 0.
+📦 Parte 1 – Classe de Domínio Produto
+    Atributos (privados)
+        nome (String)
+        preco (double)
+        quantidade (int)
 
-3️⃣ Getters e Setters
-    Implemente:
+    Construtor - Crie um construtor público que:
+        Receba nome e preco
+    Valide:
+        nome não pode ser nulo ou vazio
+        preco deve ser maior que zero
+
+Inicialize quantidade com 0
+
+📌 Caso a validação falhe, lance IllegalArgumentException.
+
+    Getters e Setters
         Getters para todos os atributos
-        Setter apenas para o nome
-.
+        Setter somente para nome
 
-4️⃣ Métodos de Negócio
-    Implemente os métodos públicos:
+Deve repetir a validação do construtor
+
+🚫 Não permitir setters para preco e quantidade.
+
+Métodos de Negócio
+    Implemente:
         adicionarEstoque(int quantidade)
-            Só adiciona se o valor for maior que zero
-
+        quantidade > 0
         removerEstoque(int quantidade)
-            Só remove se a quantidade for maior que zero e menor ou igual ao estoque atual
+        quantidade > 0
+        quantidade ≤ estoque atual
 
-5️⃣ Classe Main
-    Crie uma classe Main que:
-    Crie um produto
-    Exiba seus dados
-    Adicione itens ao estoque
-    Remova itens do estoque
-    Exiba o estado final do produto
+📌 Se inválido, lance exceção.
 
-🧠 Conceitos Trabalhados
+Método de Conversão
+    Crie o método:
+        public ProdutoDTO toDTO()
 
-✔ Classe
-✔ Atributos privados
-✔ Construtor
-✔ Getter e Setter
-✔ Controle de acesso
-✔ Lógica simples de negócio
+    Ele deve:
+        Retornar um ProdutoDTO
+        Expor apenas o estado atual do produto
 
-⭐ Desafio Extra (Opcional)
-    Crie um método exibirProduto() que mostre algo como:
+🧾 Parte 2 – Record ProdutoDTO
 
-    Produto: Notebook
-    Preço: R$ 3500.00
-    Quantidade em estoque: 5
+Crie um record imutável:
+    public record ProdutoDTO(String nome, double preco, int quantidade) {
+}
+    Validações no Record (Intermediário)
+        Use o construtor compacto para validar:
+        nome não pode ser nulo ou vazio
+        preco > 0
+        quantidade ≥ 0
+
+📌 Caso inválido, lance IllegalArgumentException.
+
+🧠 Parte 3 – Classe Main (Simulação)
+
+No método main:
+    Crie um Produto
+    Adicione estoque
+    Remova estoque
+    Converta para ProdutoDTO
+    Exiba os dados usando apenas o record
+
+Exemplo esperado:
+
+    Produto: Mouse
+    Preço: 120.00
+    Quantidade: 5
+
+🧱 Organização Sugerida (Intermediário)
+src
+└── main
+    └── java
+        ├── domain
+        │   └── Produto.java
+        ├── dto
+        │   └── ProdutoDTO.java
+        └── Main.java
+
+
+
+✅ Conceitos Trabalhados
+
+✔ Encapsulamento forte
+✔ Validações centralizadas
+✔ Exceções
+✔ Classe de domínio
+✔ Record como DTO
+✔ Imutabilidade
+✔ Organização em camadas simples
+
+⭐ Desafio Extra
+
+Crie um método aplicarDesconto(double percentual)
+    O desconto não pode deixar o preço negativo
+    O preço não deve ter setter público
  */

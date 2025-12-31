@@ -1,4 +1,4 @@
-package desafiosLivresIA;
+package desafiosLivresIA.analisevendas;
 
 import java.util.*;
 

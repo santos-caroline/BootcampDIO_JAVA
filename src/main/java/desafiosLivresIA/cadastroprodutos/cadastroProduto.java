@@ -1,4 +1,4 @@
-package aula4POO;
+package desafiosLivresIA.cadastroprodutos;
 
 public class cadastroProduto {
 }
