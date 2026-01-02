@@ -44,9 +44,10 @@ public class OperacaoConta {
 
     public static void ConsultarSaldo(NovaConta conta) {
 
-        Double saldoTotal = (conta.getSaldo() + conta.getSaldoChequeEspecial());
-        try{ conta.getSaldo();
-                    System.out.printf("""
+        try {
+            Double saldoTotal = (conta.getSaldo() + conta.getSaldoChequeEspecial());
+            conta.getSaldo();
+            System.out.printf("""
                     ********** Consulta do Saldo **********
                     Saldo da conta: R$ %.2f
                     Saldo do cheque especial: R$ %.2f
@@ -55,13 +56,13 @@ public class OperacaoConta {
                     """, conta.getSaldo(), conta.getSaldoChequeEspecial(), saldoTotal);
         } catch (NullPointerException e) {
             System.out.println("Por favor, crie uma conta primeiro.");
-            System.out.println("Error :" +e.getMessage());
+            System.out.println("Error :" + e.getMessage() + "\n");
 
         }
 
     }
 
-    public static void DepositarDinheiro(NovaConta conta, Scanner sc){
+    public static void DepositarDinheiro(NovaConta conta, Scanner sc) {
 
     }
 
@@ -69,12 +70,30 @@ public class OperacaoConta {
 
     }
 
-    public static void PagamentoBoleto(NovaConta conta, Scanner sc){
+    public static void PagamentoBoleto(NovaConta conta, Scanner sc) {
+        try {
+            System.out.println("Insira o código do boleto: ");
+            int codBoleto = Integer.parseInt(sc.nextLine()); //converte String em int
+            System.out.println("Qual o valor do boleto? ");
+            int valorBoleto = Integer.parseInt(sc.nextLine());
 
+        } catch (NumberFormatException e) {
+            System.out.println("Entrada inválida! Certifique-se de digitar APENAS números.");
+            System.out.println("Error: " + e.getMessage() + "\n");
+        }
     }
 
     public static void ChequeEspecial(NovaConta conta) {
-
+        Double taxaChequeEsp = ((conta.getSaldoChequeEspecial()*2)/10); //calc de 20% do valor do cheque especial
+        System.out.printf("""
+                **** Limite de cheque especial liberado ****
+                
+                Saldo do cheque especial: R$ %.2f
+                Taxa de adesão: valor único de %.2f
+                
+                Consulte o atendimento do banco para maiores informações.
+                ***************************************%n
+                """, conta.getSaldoChequeEspecial(), taxaChequeEsp);
     }
 
     public static void GerarExtrato(NovaConta conta) {

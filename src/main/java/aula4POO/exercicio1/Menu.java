@@ -58,11 +58,13 @@ public class Menu {
                     Escolha o número da operação desejada:
                     """);
 
-            Scanner sc = new Scanner(System.in);
-            int opcaoMenu = sc.nextInt();
-            sc.nextLine(); // limpa o Enter deixado pelo nextInt()
 
             try {
+                Scanner sc = new Scanner(System.in);
+                int opcaoMenu = sc.nextInt();
+                sc.nextLine(); // limpa o Enter deixado pelo nextInt()
+
+
                 switch (opcaoMenu) {
                     case 1 -> {
                         conta = OperacaoConta.CriarConta(sc);
@@ -87,7 +89,7 @@ public class Menu {
                         OperacaoConta.GerarExtrato(conta);
 
                     }
-                    case 0 -> { //implementar try-catch para evitar NullPointerException
+                    case 0 -> {
                         executando = false;
                     }
                     default -> System.out.println("Opção inválida. Por favor, tente novamente.");
@@ -95,7 +97,7 @@ public class Menu {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Entrada inválida! Certifique-se de digitar APENAS números. ");
-                System.out.printf("Error: %s", e);
+                System.out.println("Error: " + e.getMessage() + "\n");
 
             }
         }
