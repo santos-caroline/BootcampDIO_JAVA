@@ -1,4 +1,4 @@
-package aula4POO.exercicio1;
+package aula4ClasseEncapsulamento.exercicio1;
 
 public class NovaConta {
     //atributos:

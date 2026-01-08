@@ -1,4 +1,4 @@
-package aula4POO.exercicio3;
+package aula4ClasseEncapsulamento.exercicio3;
 
 public class PetMachine {
 

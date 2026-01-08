@@ -3,13 +3,23 @@ package aula5HerancaPolimorfismo;
 public sealed abstract class Employee permits Manager, Salesman{
     // abstract -- classe abstrata NÃO PODE SER INSTÂNCIADA
     // sealed - permits -- limita a extensão para algumas classes específicas (precisam ser final ou non-sealed)
+    //protected --  o acesso é por pacote e por herança.
+    protected String code;
+    protected String name;
+    protected String address;
+    protected int age;
+    protected double salary;
 
-    private String code;
-    private String name;
-    private String address;
-    private int age;
-    private double salary;
+    public Employee(String code, String name, String address, int age, double salary) {
+        this.code = code;
+        this.name = name;
+        this.address = address;
+        this.age = age;
+        this.salary = salary;
+    }
 
+    protected Employee() {
+    }
 
     public int getAge() {
         return age;
@@ -49,5 +59,7 @@ public sealed abstract class Employee permits Manager, Salesman{
 
     public void setSalary(double salary) {
         this.salary = salary;
+
     }
+    public abstract double getFullSalary(); //método abstrato -- NÃO tem corpo
 }

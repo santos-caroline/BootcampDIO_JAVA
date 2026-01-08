@@ -1,4 +1,4 @@
-package aula4POO.exercicio1;
+package aula4ClasseEncapsulamento.exercicio1;
 /*
     Todos os exercícios devem ter um menu de interativo para chamar as funções e ter uma opção de sair para
     finalizar a execução

@@ -1,4 +1,4 @@
-package aula4POO.exercicio3;
+package aula4ClasseEncapsulamento.exercicio3;
 
 import java.util.Scanner;
 // possui erros de mensagem ao usuário;
