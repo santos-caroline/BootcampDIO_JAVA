@@ -49,6 +49,7 @@ public class MapExemplo {
         users.putIfAbsent("", new User("", -1)); //se não tiver o value ele acrescenta
         System.out.println(users);
 
+        //TreeMap -- mantém as chaves em ordem natural ou definida por um comparador?
 
 
 
