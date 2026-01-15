@@ -1,4 +1,4 @@
-package aula7;
+package aula7.ListArray;
 
 import java.util.Objects;
 
