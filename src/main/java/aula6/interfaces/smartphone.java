@@ -1,4 +1,4 @@
-package aula6InterfacesLambda;
+package aula6.interfaces;
 
 public class smartphone implements VideoPlayer, MusicPlayer{
     @Override

@@ -1,4 +1,4 @@
-package aula6InterfacesLambda;
+package aula6.interfaces;
 
 /*
 Em Java, uma interface é um contrato que define um conjunto de métodos (assinaturas) que uma classe deve

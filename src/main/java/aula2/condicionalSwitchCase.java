@@ -1,5 +1,6 @@
 package aula2;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class condicionalSwitchCase {
@@ -9,6 +10,8 @@ public class condicionalSwitchCase {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite um número de 1 a 7: ");
         var option = sc.nextInt();
+
+
 
         switch (option) {
             case 1, 7 -> {

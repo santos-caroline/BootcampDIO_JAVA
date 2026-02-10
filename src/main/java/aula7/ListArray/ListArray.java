@@ -12,7 +12,7 @@ public class ListArray {
     public static void main(String[] args) {
 
         int[] code = {123, 321};
-
+        String[] symbol;
         System.out.println(code[0]);
         System.out.println(code[1]);
         System.out.println("tamanho :"+code.length);

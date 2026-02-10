@@ -1,4 +1,4 @@
-package aula6InterfacesLambda;
+package aula6.interfaces;
 
 public record MusicBox(String music, boolean isPaused) implements MusicPlayer {
     @Override
